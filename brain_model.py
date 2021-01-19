@@ -153,7 +153,7 @@ def perform_surgery_1():
     dy = np.ones(4)
     dz = [deformation_A_list_avg, deformation_B_list_avg, deformation_C_list_avg, deformation_D_list_avg]
 
-    ax1.bar3d(xpos, ypos, zpos, dx, dy, dz, color='#4287f5')
+    ax1.bar3d(xpos, ypos, zpos, dx, dy, dz, color='#00ceaa')
     x_labels = ['', 'slow', '', 'fast']
     ax1.set_xticks(range(4))
     ax1.set_xticklabels(x_labels)
@@ -243,5 +243,5 @@ def perform_surgery_2():
     plt.show()
     return 0
 
-perform_surgery_1()
-perform_surgery_2()
+# perform_surgery_1()
+# perform_surgery_2()

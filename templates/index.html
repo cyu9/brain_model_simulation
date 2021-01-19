@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Microelectrode Surgery Simulation App {% endblock %}</h1>
+
+    <form name="myForm" action="/perform_surgery" method="post" onsubmit="">
+
+    <div class="container px-4">
+      <div class="row gx-5">
+        <div class="col">
+         <div class="p-3 border bg-light">
+             <h3>Brain Parameters</h3>
+         </div>
+         <div class="p-3 border bg-light">
+             <h5>Age</h5>
+                <p>
+                <input type="radio" name="brainAges" id="brainAge1" value='young' checked> young <br>
+                <input type="radio" name="brainAges" id="brainAge2" value='old'> old <br>
+                </p>
+         </div>
+
+         <div class="p-3 border bg-light">
+             <h5>Size</h5>
+                <p>
+                <input type="radio" name="brainSizes" id="brainSize1" value='small' checked> small <br>
+                <input type="radio" name="brainSizes" id="brainSize2" value='large'> large <br>
+                </p>
+         </div>
+
+         <div class="p-3 border bg-light">
+             <h5>Insertion Depth</h5>
+                <p>
+                <input type="radio" name="insertionDepths" id="insertionDepth1" value='shallow' checked> shallow <br>
+                <input type="radio" name="insertionDepths" id="insertionDepth2" value='deep'> deep <br>
+                </p>
+         </div>
+
+         <div class="p-3 border bg-light">
+             <h5>Insertion Speed</h5>
+                <p>
+                <input type="radio" name="insertionSpeeds" id="insertionSpeed1" value='slow' checked> slow <br>
+                <input type="radio" name="insertionSpeeds" id="insertionSpeed2" value='fast'> fast <br>
+                </p>
+         </div>
+
+        </div>
+        <div class="col">
+          <div class="p-3 border bg-light">
+              <h3>Microelectrode Parameters</h3>
+          </div>
+
+         <div class="p-3 border bg-light">
+             <h5>Type</h5>
+                <p>
+                <input type="radio" name="electrodeTypes" id="electrodeType1" value='sharp' checked> sharp <br>
+                <input type="radio" name="electrodeTypes" id="electrodeType2" value='medium'> medium <br>
+                <input type="radio" name="electrodeTypes" id="electrodeType3" value='blunt'> blunt <br>
+                </p>
+         </div>
+
+         <div class="p-3 border bg-light">
+             <h5>Cleanliness</h5>
+                <p>
+                <input type="radio" name="cleanliness" id="cleanliness1" value='clean' checked> clean <br>
+                <input type="radio" name="cleanliness" id="cleanliness2" value='dirty'> dirty <br>
+                </p>
+         </div>
+
+         <div class="p-3 border bg-light">
+             <h5>Texture</h5>
+                <p>
+                <input type="radio" name="textures" id="texture1" value='rough' checked> rough <br>
+                <input type="radio" name="textures" id="texture2" value='smooth'> smooth <br>
+                </p>
+         </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        <div class="col">
+        </div>
+
+        <div class="col">
+            <input class="btn btn-primary" type=submit value="Simulate Surgery">
+        </div>
+
+        <div class="col">
+            <h4>Deformation: {{ deformation_value }}</h4>
+        </div>
+        </div>
+    </div>
+
+    </form>
+{% endblock %}
